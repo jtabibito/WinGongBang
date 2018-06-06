@@ -88,7 +88,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>D:\GameMake\WinGoBang\res\Resources;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\GameMake\WinGoBang\3rd\OpenGL\include;D:\GameMake\WinGoBang\res\Resources;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -148,6 +148,10 @@
     <ClCompile Include="..\..\src\GameMain.cc" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\3rd\OpenGL\include\GL.H" />
+    <ClInclude Include="..\..\3rd\OpenGL\include\GLAUX.H" />
+    <ClInclude Include="..\..\3rd\OpenGL\include\GLU.H" />
+    <ClInclude Include="..\..\3rd\OpenGL\include\glut.h" />
     <ClInclude Include="..\..\res\Resources\resource.h" />
     <ClInclude Include="..\..\src\GameLogic\CChess.h" />
     <ClInclude Include="..\..\src\GameLogic\CChessBoard.h" />

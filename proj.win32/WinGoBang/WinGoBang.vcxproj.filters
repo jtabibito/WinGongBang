@@ -16,6 +16,9 @@
     <Filter Include="Source Files\GameLogic">
       <UniqueIdentifier>{af9ee34f-a597-43a4-89ff-749cbbc53717}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\3rd">
+      <UniqueIdentifier>{8603350a-7846-487a-b0e6-7c8ac6898ad9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\GameMain.cc">
@@ -35,14 +38,26 @@
     <ClInclude Include="..\..\res\Resources\resource.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\GameLogic\CChess.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\src\GameLogic\MainLogic.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\GameLogic\CChessBoard.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\GameLogic\CChess.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rd\OpenGL\include\GL.H">
+      <Filter>Header Files\3rd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rd\OpenGL\include\GLAUX.H">
+      <Filter>Header Files\3rd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rd\OpenGL\include\GLU.H">
+      <Filter>Header Files\3rd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rd\OpenGL\include\glut.h">
+      <Filter>Header Files\3rd</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
