@@ -69,5 +69,17 @@
     <Image Include="..\..\res\Pic\五子棋图标.ico">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="..\..\res\Pic\五子棋bmp\blackstone.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\res\Pic\五子棋bmp\lastblackstone.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\res\Pic\五子棋bmp\lastwhitestone.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\res\Pic\五子棋bmp\whitestone.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

@@ -7,7 +7,7 @@
 
 #include "CChessBoard.h"
 
-CrossPoint CrossPos[MAX_ROW_POS][MAX_CUR_POS];
+CrossPoint CrossPos[MAX_ROW_NUM][MAX_CUR_NUM];
 
 CChessBoard::CChessBoard(int sx, int sy, int width, int height) :
 	cbsx(sx), cbsy(sy), cbWidth(width), cbHeight(height) {
@@ -29,15 +29,23 @@ CChessBoard::~CChessBoard() {
 void
 CChessBoard::DrawChessBoard(HWND hWnd, HDC hdc) {
 	PAINTSTRUCT p;
+	
 	BeginPaint(hWnd, &p);
-	HPEN boardPen = CreatePen(PS_SOLID, 2, RGB(255, 12, 33));
+	HBRUSH hBrush = CreateSolidBrush(RGB(231, 198, 100));
+	Rectangle(hdc, this->cbsx - 10, this->cbsy - 10, this->cbsx + this->cbWidth + 10, this->cbsy + this->cbHeight + 10);
+	SelectObject(hdc, hBrush);
+	GetStockObject(NULL_BRUSH);
+	EndPaint(hWnd, &p);
+
+	BeginPaint(hWnd, &p);
+	HPEN boardPen = CreatePen(PS_SOLID, 2, RGB(0, 0, 0));
 	SelectObject(hdc, boardPen);
 	/*MoveToEx(hdc, this->cbsx, this->cbsy, NULL);
 	LineTo(hdc, this->cbsx + this->cbWidth, this->cbsy);
 	MoveToEx(hdc, this->cbsx, this->cbsy, NULL);
 	LineTo(hdc, this->cbsx, this->cbsy + this->cbHeight);*/
 	int count = 0;
-	
+
 	// (0, 0)位置开始画15条线, 
 	for (int i = this->cbsx; i < this->cbsx + this->cbWidth; i++) {
 		if ((i - this->cbsx) % 37 == 0) {

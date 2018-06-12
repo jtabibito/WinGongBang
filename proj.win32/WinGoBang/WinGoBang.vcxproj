@@ -161,6 +161,10 @@
     <ResourceCompile Include="..\..\res\Resources\GameResources.rc" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="..\..\res\Pic\五子棋bmp\blackstone.bmp" />
+    <Image Include="..\..\res\Pic\五子棋bmp\lastblackstone.bmp" />
+    <Image Include="..\..\res\Pic\五子棋bmp\lastwhitestone.bmp" />
+    <Image Include="..\..\res\Pic\五子棋bmp\whitestone.bmp" />
     <Image Include="..\..\res\Pic\五子棋图标.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

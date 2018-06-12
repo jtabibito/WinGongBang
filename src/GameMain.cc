@@ -2,15 +2,20 @@
 
 #include "resource.h"
 
-// 引用游戏代码
+// 游戏逻辑代码
 #include "GameLogic\MainLogic.h"
 
 #define MAX_STR_LEN 100
 
-static HINSTANCE g_hInstance;
+#define WINDOW_WIDTH 800
+#define WINDOW_HEIGHT 600
+
+HINSTANCE g_hInstance;
 HWND g_hWnd;
 HDC g_hdc;
+HDC g_mdc;
 HGLRC g_hrc;
+
 WCHAR szClassName[MAX_STR_LEN] = L"GoBangGame";
 
 // 注册窗口
@@ -38,7 +43,7 @@ int APIENTRY wWinMain(HINSTANCE hInstance,
 	if (!MyUpdateWindow(nCmdShow)) {
 		return FALSE;
 	}
-	
+
 	MyProcMsg();
 	
 	return 0;
@@ -72,13 +77,13 @@ MyUpdateWindow(int nCmdShow) {
 	HWND hWnd;
 
 	hWnd = CreateWindowW(szClassName, L"五子棋", WS_OVERLAPPEDWINDOW,
-		CW_USEDEFAULT, CW_USEDEFAULT, 800, 600, NULL, NULL, g_hInstance, NULL);
-	if (!hWnd) {
+		CW_USEDEFAULT, CW_USEDEFAULT, WINDOW_WIDTH, WINDOW_HEIGHT, NULL, NULL, g_hInstance, NULL);
+	
+	if (!InitResource(hWnd)) {
 		MessageBox(hWnd, L"Error", L"初始化资源失败", MB_OKCANCEL | MB_ICONERROR);
 		return FALSE;
 	}
-
-	g_hWnd = hWnd;
+	
 
 	MyShowWindow(hWnd, nCmdShow);
 
@@ -94,12 +99,15 @@ MyShowWindow(HWND hWnd, int nCmdShow) {
 void 
 MyProcMsg() {
 	MSG msg;
+	
 	while (GetMessage(&msg, NULL, 0, 0)) {
 		if (!TranslateAccelerator(msg.hwnd, NULL, &msg)) {
 			TranslateMessage(&msg);
 			DispatchMessage(&msg);
 		}
-		InvalidateRect(g_hWnd, NULL, TRUE);
+
+		// 游戏部分
+		// InvalidateRect(g_hWnd, NULL, true);
 		DrawGameUI();
 	}
 }
@@ -114,10 +122,15 @@ MyWndProc(HWND hWnd,
 
 	}break;
 	case WM_PAINT: {
-		g_hdc = GetDC(g_hWnd);
+		
+		
 	}break;
 	case WM_DESTROY: {
+		ClearResoucre();
 		PostQuitMessage(0);
+	}break;
+	case WM_LBUTTONDOWN: {
+		GetCursorClick();
 	}break;
 	default:
 		return DefWindowProc(hWnd, msgID, wParam, lParam);

@@ -1,8 +1,8 @@
 #ifndef __CCHESSBOARD_H__
 #define __CCHESSBOARD_H__
 
-#define MAX_ROW_POS 15
-#define MAX_CUR_POS 15
+#define MAX_ROW_NUM 15
+#define MAX_CUR_NUM 15
 
 struct CrossPoint {
 	int cx;

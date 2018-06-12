@@ -2,10 +2,12 @@
 #define __MAINLOGIC_H__
 
 class CChessBoard;
+class CChess;
 
-void DrawGameUI();
-void DrawRectCross(int cx, int cy);
+BOOL InitResource(HWND hWnd);
+VOID ClearResoucre();
 
-void DisplayMousePos();
+VOID DrawGameUI();
+VOID GetCursorClick();
 
 #endif // !__MAINLOGIC_H__

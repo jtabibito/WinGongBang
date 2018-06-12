@@ -1,16 +1,28 @@
 #ifndef __CCHESS_H__
 #define __CCHESS_H__
 
-class Chess {
-public:
-	Chess(int x, int y);
-	~Chess();
-	void DrawOneChess();
+enum ColorType {
+	Nil_Chess,
+	White_Chess,
+	Black_Chess,
+};
 
-private:
+class CChess {
+public:
+	CChess(ColorType colortype);
+	~CChess();
+	void DrawOneChess(int x, int y);
+	void DrawLastChess();
+
+public:
 	int cx;
 	int cy;
+	int did_draw;
+
+private:
+	int colortype;
 };
+
 
 
 #endif // !__CCHESS_H__
